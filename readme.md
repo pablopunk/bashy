@@ -53,16 +53,7 @@ sys     0m0.008s
 
 __Yes and no__. While times like those can be indistinguishable for humans, you can totally notice the difference in slower systems and also in fast terminal actions like:
 
-<p align="center">
-  <div align="center" style="display: inline-block">
-    <div align="center" style="font-family: Menlo, monospace;"><i>bashy</i></div>
-    <img width="300px" src="https://github.com/pablopunk/art/raw/master/bashy/bashy-enter.gif" />
-  </div>
-  <div align="center" style="display: inline-block">
-    <div align="center" style="font-family: Menlo, monospace;"><i>vcprompt</i></div>
-    <img width="300px" src="https://github.com/pablopunk/art/raw/master/bashy/vcprompt-enter.gif" />
-  </div>
-</p>
+![vs_vcprompt](https://github.com/pablopunk/art/raw/master/bashy/vs_vcprompt.gif)
 
 ## Customization
 
