@@ -6,12 +6,10 @@
 
 ## Install
 
-You need `bashy` to run as any other command, so install it in any directory in your $PATH. I like to use `/opt/bin`:
+You need `bashy` to run as any other command, so install it in any directory in your $PATH. I like to use `~/bin`:
 
 ```bash
 $ cp bashy /opt/bin/bashy
-$ echo export PATH=$PATH:/opt/bin >> ~/.bashrc       # Linux
-$ echo export PATH=$PATH:/opt/bin >> ~/.bash_profile # MacOS
 ```
 
 ## Usage
