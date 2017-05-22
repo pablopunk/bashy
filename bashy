@@ -15,7 +15,6 @@ fi
 
 gitstatus=$(git status --porcelain | cut -d' ' -f2)
 branch="$(git rev-parse --abbrev-ref HEAD)" || branch="unnamed branch"
-branch=${branch##refs/heads/}
 
 clean=0; del=0; changed=0; new=0;
 
