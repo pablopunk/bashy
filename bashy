@@ -3,12 +3,6 @@
 bold='\033[1m'
 normal='\033[00m'
 
-# Symbols
-cleanSymbol="\033[39m✓"   # foreground
-changedSymbol="\033[33m•" # yellow
-newSymbol="\033[34m+"     # blue
-delSymbol="\033[31m⨯"     # red
-
 if [ "$1" = "-r" ]; then
   repo=$(dirs)
 else
@@ -20,7 +14,7 @@ if ! git rev-parse --is-inside-work-tree &>/dev/null; then
 fi
 
 gitstatus=($(git status --porcelain | cut -d' ' -f2)) # array of lines
-branch="$(git symbolic-ref HEAD 2>/dev/null)" || branch="unnamed branch"
+branch="$(git rev-parse --abbrev-ref HEAD)" || branch="unnamed branch"
 branch=${branch##refs/heads/}
 
 clean=0; del=0; changed=0; new=0;
@@ -37,10 +31,10 @@ done
 
 [ -z "$line" ] && clean=1
 
-[ $clean -eq 1 ]   && branch="$branch$cleanSymbol"
-[ $del -eq 1 ]     && branch="$branch$delSymbol"
-[ $new -eq 1 ]     && branch="$branch$newSymbol"
-[ $changed -eq 1 ] && branch="$branch$changedSymbol"
+[ $clean -eq 1 ]   && branch="$branch\033[39m✓"
+[ $del -eq 1 ]     && branch="$branch\033[33m•"
+[ $new -eq 1 ]     && branch="$branch\033[34m+"
+[ $changed -eq 1 ] && branch="$branch\033[31m⨯"
 
 # output
 echo -en "$bold$repo$normal at $bold$branch$normal"
