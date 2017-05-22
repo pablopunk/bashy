@@ -31,9 +31,9 @@ done
 [ -z "$line" ] && clean=1
 
 [ $clean -eq 1 ]   && branch="$branch\033[39m✓" # foreground
-[ $del -eq 1 ]     && branch="$branch\033[33m•" # yellow
+[ $del -eq 1 ]     && branch="$branch\033[31m⨯" # red
 [ $new -eq 1 ]     && branch="$branch\033[36m+" # cyan
-[ $changed -eq 1 ] && branch="$branch\033[31m⨯" # red
+[ $changed -eq 1 ] && branch="$branch\033[33m•" # yellow
 
 # output
 echo -en "$bold$repo$normal at $bold$branch$normal"
