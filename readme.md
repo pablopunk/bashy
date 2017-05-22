@@ -68,4 +68,7 @@ Okay okay, you don't care so much about the performance because you love customi
 
 ## Author
 
-© 2017 [Pablo Varela](https://twitter.com/pablopunk)
+
+| ![me](https://www.gravatar.com/avatar/fa50aeff0ddd6e63273a068b04353d9d?s=100) |
+| ----------------------------------------------------------------------------- |
+| © 2017 [Pablo Varela](https://twitter.com/pablopunk)                          |
