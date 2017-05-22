@@ -1,15 +1,7 @@
 #!/bin/bash
-#
-# Bashy
-# Copyright 2017 Pablo Varela
-# 
-# This script returns the current directory name
-# If it's a git repo, it will return the branch
-# and the status symbols
-#
 
-bold=$(tput bold)
-normal=$(tput sgr0)
+bold='\033[1m'
+normal='\033[00m'
 
 # Symbols
 cleanSymbol="\033[39m✓"   # foreground
