@@ -17,7 +17,7 @@ $ cp bashy ~/bin
 In your `bashrc` (linux) or `bash_profile` (MacOS) you need to add `bashy` to your `$PS1`:
 
 ```bash
-export PS1='\[$(bashy)\] $'
+export PS1='\[$(bashy)\] $ '
 ```
 
 This example will give you the next prompt:
@@ -25,6 +25,14 @@ This example will give you the next prompt:
 ```bash
 repo at branch✓ $ # if you are in a git repo
 folder $ # otherwise
+```
+
+You can also choose a path relative to your home folder with the option `-r`:
+
+```bash
+export PS1='\[$(bashy -r)\] $ '
+# results in
+~/repos/bashy at master $
 ```
 
 ## Benchmarks

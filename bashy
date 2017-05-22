@@ -17,7 +17,11 @@ changedSymbol="\033[33m•" # yellow
 newSymbol="\033[34m+"     # blue
 delSymbol="\033[31m⨯"     # red
 
-repo=${PWD##*/}
+if [ "$1" = "-r" ]; then
+  repo=$(dirs)
+else
+  repo=${PWD##*/}
+fi
 
 if ! git rev-parse --is-inside-work-tree &>/dev/null; then
   echo -en "$bold$repo$normal"; exit 0
