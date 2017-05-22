@@ -50,9 +50,9 @@ user    0m0.037s
 sys     0m0.024s
 
 $ time bashy
-real    0m0.024s
-user    0m0.010s
-sys     0m0.008s
+real    0m0.017s
+user    0m0.006s
+sys     0m0.005s
 ```
 
 > Okay, `bashy` is faster but, come on, `0.094s` is still very fast.
