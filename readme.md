@@ -65,6 +65,11 @@ __Yes and no__. While times like those can be indistinguishable for humans, you 
 
 Okay okay, you don't care so much about the performance because you love customization, and tools like `vcprompt` are very good at that. While `bashy` does not have a built in customization option, __it's extremely easy to customize__. Just edit the script, purely bash, and write your own icons there, add more colors,  or even rearrange the branch name and directory. Your imagination is the limit here.
 
+## Zsh
+
+If you still wanna use ZSH, __`bashy` will work as well as in bash__.
+
+There is also a really cool prompt for zsh called [pure](https://github.com/sindresorhus/pure). It's also really fast, beautiful and _asynchronous_! 
 
 ## Author
 
