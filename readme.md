@@ -6,10 +6,10 @@
 
 ## Install
 
-You need `bashy` to run as any other command, so install it in any directory in your $PATH. I like to use `~/bin`:
+You can use the executable from this repo or install it with [npm](https://www.npmjs.com/)
 
 ```bash
-$ cp bashy ~/bin
+npm install -g bashy
 ```
 
 ## Usage
