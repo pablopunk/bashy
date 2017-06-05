@@ -1,0 +1,27 @@
+{
+  "name": "bashy",
+  "version": "1.0.0",
+  "description": "Extremely fast and simple git prompt for bash",
+  "main": "bashy",
+  "bin": {
+    "bashy": "bashy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablopunk/bashy.git"
+  },
+  "keywords": [
+    "bash",
+    "zsh",
+    "shell",
+    "prompt",
+    "fast",
+    "git"
+  ],
+  "author": "Pablo Varela",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pablopunk/bashy/issues"
+  },
+  "homepage": "https://github.com/pablopunk/bashy#readme"
+}
