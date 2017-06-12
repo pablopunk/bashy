@@ -63,7 +63,17 @@ __Yes and no__. While times like those can be indistinguishable for humans, you 
 
 ## Customization
 
-Okay okay, you don't care so much about the performance because you love customization, and tools like `vcprompt` are very good at that. While `bashy` does not have a built in customization option, __it's extremely easy to customize__. Just edit the script, purely bash, and write your own icons there, add more colors,  or even rearrange the branch name and directory. Your imagination is the limit here.
+Okay okay, you don't care so much about the performance because you love customization, and tools like `vcprompt` are very good at that. While `bashy` does not have a built in customization option, __it's extremely easy to customize__. Just edit the script, purely bash, and write your own icons there, add more colors, or even rearrange the branch name and directory. Your imagination is the limit here.
+
+You can use your own modified version of bashy cloning this repo and linking it with npm:
+
+```bash
+npm remove -g bashy                          # Uninstall the global bashy
+git clone https://github.com/pablopunk/bashy # Clone this repo
+cd bashy
+npm link                                     # Link
+bashy                                        # Use it!
+```
 
 ## Zsh
 
