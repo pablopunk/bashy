@@ -4,8 +4,7 @@
   <a href="https://www.npmjs.com/package/bashy"><img src="https://img.shields.io/npm/dt/bashy.svg" /></a>
 </p>
 <p align="center">Extremely fast and simple git prompt for bash</p>
-
-![main](https://raw.githubusercontent.com/pablopunk/art/master/bashy/main.png)
+<p align="center"><img src="https://raw.githubusercontent.com/pablopunk/art/master/bashy/main.png" /></p>
 
 ## Install
 
