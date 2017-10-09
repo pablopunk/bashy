@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bold="\x01$(tput bold)\x02"
+bold="\x01\033[1m\x02"
 normal="\x01$(tput sgr0)\x02"
 
 if [ "$1" = "-r" ]; then
@@ -13,32 +13,21 @@ if ! git rev-parse --is-inside-work-tree &>/dev/null; then
   echo -en "$bold$repo$normal"; exit 0
 fi
 
-gitstatus=$(git status --porcelain | sed s/^.// | cut -d' ' -f1)
+gitstatus=$(git status --porcelain)
 branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)" || branch="unnamed branch"
-
-clean=0; del=0; changed=0; new=0;
-
-for line in $gitstatus; do
-  if [ "$line" = "D" ]; then
-    del=1
-  elif [ "$line" = "M" ]; then
-    changed=1
-  else
-    new=1
-  fi
-done
-
-[ -z "$line" ] && clean=1
 
 symbol_clean="\x01\033[39m\x02✓"  # foreground
 symbol_delete="\x01\033[31m\x02⨯" # red
 symbol_new="\x01\033[36m\x02+"    # cyan
 symbol_change="\x01\033[33m\x02•" # yellow
 
-[ $clean -eq 1 ]   && symbols="$symbols$symbol_clean"
-[ $del -eq 1 ]     && symbols="$symbols$symbol_delete"
-[ $new -eq 1 ]     && symbols="$symbols$symbol_new"
-[ $changed -eq 1 ] && symbols="$symbols$symbol_change"
+for line in $gitstatus; do
+  [[ $line =~ ^D ]] && symbols="$symbols$symbol_delete"
+  [[ $line =~ ^M ]] && symbols="$symbols$symbol_change"
+  [[ $line =~ ^\?\? ]] && symbols="$symbols$symbol_new"
+done
+
+[ -z "$symbols" ] && symbols="$symbol_clean"
 
 # output
 echo -en "$bold$repo$normal at $bold$branch $symbols$normal"
