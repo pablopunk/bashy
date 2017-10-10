@@ -14,7 +14,7 @@ if ! git rev-parse --is-inside-work-tree &>/dev/null; then
 fi
 
 gitstatus=$(git status --porcelain)
-branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)" || branch="unnamed branch"
+branch="$(git symbolic-ref --short HEAD)" || branch="unnamed branch"
 
 symbol_clean="\x01\033[39m\x02✓"  # foreground
 symbol_delete="\x01\033[31m\x02⨯" # red
