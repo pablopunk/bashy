@@ -21,11 +21,17 @@ symbol_delete="\x01\033[31m\x02⨯" # red
 symbol_new="\x01\033[36m\x02+"    # cyan
 symbol_change="\x01\033[33m\x02•" # yellow
 
+delete=0; change=0; new=0
+
 for line in $gitstatus; do
-  [[ $line =~ ^D ]] && symbols="$symbols$symbol_delete"
-  [[ $line =~ ^M ]] && symbols="$symbols$symbol_change"
-  [[ $line =~ ^\?\? ]] && symbols="$symbols$symbol_new"
+  [[ $line =~ ^D ]] && delete=1
+  [[ $line =~ ^M ]] && change=1
+  [[ $line =~ ^\?\? ]] && new=1
 done
+
+[ $delete -eq 1 ] && symbols="$symbols$symbol_delete"
+[ $change -eq 1 ] && symbols="$symbols$symbol_change"
+[ $new -eq 1 ] && symbols="$symbols$symbol_new"
 
 [ -z "$symbols" ] && symbols="$symbol_clean"
 
