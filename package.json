@@ -1,6 +1,6 @@
 {
   "name": "bashy",
-  "version": "2.1.0",
+  "version": "2.3.0",
   "description": "Extremely fast and simple git prompt for bash",
   "main": "bashy",
   "bin": {
