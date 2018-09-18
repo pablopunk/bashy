@@ -16,7 +16,7 @@ npm install -g bashy
 
 ## Usage
 
-In your `bashrc` (linux) or `bash_profile` (MacOS) you need to add `bashy` to your `$PS1`:
+In your `~/.bashrc` (linux) or `~/.bash_profile` (MacOS) you need to add `bashy` to your `$PS1`:
 
 ```bash
 export PS1='$(bashy) $ '
