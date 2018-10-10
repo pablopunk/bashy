@@ -37,6 +37,8 @@ export PS1='$(bashy -r) $ '
 ~/repos/bashy at master $
 ```
 
+NOTE: Since 10.10.2018 `bashy` does not support branch status on subdirectories of a repo. This decision meant a 2x increase in performance.
+
 ## Benchmarks
 
 I've been a `zsh` user for a long time just for the prompts of `oh-my-zsh`. But because `oh-my-zsh` started to slow my prompt so much I decided to go back to `bash`  and make my own customizations.
@@ -81,7 +83,7 @@ bashy                                        # Use it!
 
 If you still wanna use ZSH, __`bashy` will work as well as in bash__.
 
-There is also a really cool prompt for zsh called [pure](https://github.com/sindresorhus/pure). It's also really fast, beautiful and _asynchronous_! 
+There is also a really cool prompt for zsh called [pure](https://github.com/sindresorhus/pure). It's also really fast, beautiful and _asynchronous_!
 
 ## Author
 
