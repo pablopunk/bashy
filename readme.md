@@ -37,7 +37,7 @@ export PS1='$(bashy -r) $ '
 ~/repos/bashy at master $
 ```
 
-NOTE: Since 10.10.2018 `bashy` does not support branch status on subdirectories of a repo. This decision meant a 2x increase in performance.
+NOTE: Since version *2.5.0* `bashy` does not support branch status on subdirectories of a repo. This decision meant a 2x increase in performance.
 
 ## Benchmarks
 
