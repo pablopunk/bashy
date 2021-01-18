@@ -81,12 +81,10 @@ bashy                                        # Use it!
 
 ## Zsh
 
-If you still wanna use ZSH, __`bashy` will work as well as in bash__.
+If you still wanna use ZSH, __`bashy` will work as well as in bash__, but you need to set this option on your `.zshrc`: `setopt PROMPT_SUBST`.
 
-There is also a really cool prompt for zsh called [pure](https://github.com/sindresorhus/pure). It's also really fast, beautiful and _asynchronous_!
 
 ## Author
-
 
 | ![me](https://www.gravatar.com/avatar/fa50aeff0ddd6e63273a068b04353d9d?s=100) |
 | ----------------------------------------------------------------------------- |
