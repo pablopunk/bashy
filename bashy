@@ -13,25 +13,28 @@ if [ ! -d .git ]; then
   echo -en "$bold$repo$normal"; exit 0
 fi
 
-gitstatus="$(git status --porcelain)"
+gitstatus="$(git status --porcelain --branch)"
 branch="$(git symbolic-ref --short HEAD)" || branch="unnamed branch"
 
 symbol_clean="\x01\033[39m\x02✓"  # foreground
 symbol_delete="\x01\033[31m\x02⨯" # red
 symbol_new="\x01\033[36m\x02+"    # cyan
 symbol_change="\x01\033[33m\x02•" # yellow
+symbol_ahead="\x01\033[33m\x02↑" # yellow
 
-delete=0; change=0; new=0
+delete=0; change=0; new=0; ahead=0
 
 for line in $gitstatus; do
   [[ $line =~ ^D ]] && delete=1
   [[ $line =~ ^M ]] && change=1
   [[ $line =~ ^\?\? ]] && new=1
+  [[ $line =~ ahead ]] && ahead=1
 done
 
 [ $delete -eq 1 ] && symbols="$symbols$symbol_delete"
 [ $change -eq 1 ] && symbols="$symbols$symbol_change"
 [ $new -eq 1 ] && symbols="$symbols$symbol_new"
+[ $ahead -eq 1 ] && symbols="$symbols$symbol_ahead"
 
 [ -z "$symbols" ] && symbols="$symbol_clean"
 
