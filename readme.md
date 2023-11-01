@@ -83,9 +83,14 @@ bashy                                        # Use it!
 
 If you still wanna use ZSH, __`bashy` will work as well as in bash__, but you need to set this option on your `.zshrc`: `setopt PROMPT_SUBST`.
 
+## Troubleshooting
+
+### Why is my `bashy` slow?
+
+I've run into this recently. If you install `bashy` with `npm` and you're using a version manager for node (like `asdf`, `nvm`, etc...), the executable is not longer `bashy` directly, but the manager executable try to find bashy and run it after, which takes a long time (easily half a second).
 
 ## Author
 
 | ![me](https://www.gravatar.com/avatar/fa50aeff0ddd6e63273a068b04353d9d?s=100) |
 | ----------------------------------------------------------------------------- |
-| © 2017 [Pablo Varela](https://twitter.com/pablopunk)                          |
+| © 2017 [Pablo Varela](https://pablopunk.com)                                  |
