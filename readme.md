@@ -87,7 +87,7 @@ If you still wanna use ZSH, __`bashy` will work as well as in bash__, but you ne
 
 ### Why is my `bashy` slow?
 
-I've run into this recently. If you install `bashy` with `npm` and you're using a version manager for node (like `asdf`, `nvm`, etc...), the executable is not longer `bashy` directly, but the manager executable try to find bashy and run it after, which takes a long time (easily half a second).
+I've run into this recently. If you install `bashy` with `npm` and you're using a version manager for node (like `asdf`, `nvm`, etc...), the executable is not longer `bashy` directly, but whatever tool you're using, which tries to find bashy and run it afterwards. And that takes a long time (easily half a second).
 
 ## Author
 
