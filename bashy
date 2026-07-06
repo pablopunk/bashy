@@ -25,13 +25,15 @@ symbol_ahead="\x01\033[32m\x02↑"  # green
 
 delete=0; change=0; new=0; ahead=0; behind=0
 
-for line in $gitstatus; do
-  [[ $line =~ ^D ]] && delete=1
-  [[ $line =~ ^M ]] && change=1
-  [[ $line =~ ^\?\? ]] && new=1
+while IFS= read -r line; do
+  # porcelain: XY status in first 2 chars (index + worktree)
+  [[ ${line:0:1} == D || ${line:1:1} == D ]] && delete=1
+  [[ ${line:0:1} == M || ${line:1:1} == M ]] && change=1
+  [[ ${line:0:2} == '??' ]] && new=1
+  # branch info (behind/ahead appear in ## line)
   [[ $line =~ behind ]] && behind=1
   [[ $line =~ ahead ]] && ahead=1
-done
+done <<< "$gitstatus"
 
 [ $delete -eq 1 ] && symbols="$symbols$symbol_delete"
 [ $change -eq 1 ] && symbols="$symbols$symbol_change"
