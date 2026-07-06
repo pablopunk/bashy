@@ -25,13 +25,22 @@ symbol_ahead="\x01\033[32m\x02↑"  # green
 
 delete=0; change=0; new=0; ahead=0; behind=0
 
-for line in $gitstatus; do
-  [[ $line =~ ^D ]] && delete=1
-  [[ $line =~ ^M ]] && change=1
-  [[ $line =~ ^\?\? ]] && new=1
-  [[ $line =~ behind ]] && behind=1
-  [[ $line =~ ahead ]] && ahead=1
-done
+while IFS= read -r line; do
+  case "$line" in
+    '## '*)
+      [[ $line == *'behind '* ]] && behind=1
+      [[ $line == *'ahead '* ]] && ahead=1
+      ;;
+    '?? '*)
+      new=1
+      ;;
+    *)
+      status="${line:0:2}"
+      [[ $status == *D* ]] && delete=1
+      [[ $status == *M* ]] && change=1
+      ;;
+  esac
+done <<< "$gitstatus"
 
 [ $delete -eq 1 ] && symbols="$symbols$symbol_delete"
 [ $change -eq 1 ] && symbols="$symbols$symbol_change"
